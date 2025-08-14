@@ -340,9 +340,9 @@ export class IntelliProveWidgets {
   }
 
   static newStylingSheet(css: string) {
-	const newStyle = document.createElement("style");
-	newStyle.textContent = css; // use textContent for slightly better perf
-	document.head.appendChild(newStyle);
+    const newStyle = document.createElement("style");
+    newStyle.textContent = css; // use textContent for slightly better perf
+    document.head.appendChild(newStyle);
   }
 
   static injectHeadScript(script: HTMLScriptElement): void {
@@ -406,6 +406,7 @@ export class IntelliProveWidgets {
       scriptTag.type = "module";
     }
     scriptTag.src = uri;
+    scriptTag.crossOrigin = "anonymous";
     document.head.appendChild(scriptTag);
   }
 
